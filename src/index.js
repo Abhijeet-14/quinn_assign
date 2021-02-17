@@ -5,11 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reducer, { initialState } from "./Reducer/reducer";
 import {DataLayer} from "./Reducer/DataLayer";
+import { CssBaseline } from "@material-ui/core";
 
 ReactDOM.render(
   <React.StrictMode>
     <DataLayer intialState = {initialState} reducer={reducer}>
       <App />
+      <CssBaseline />
     </DataLayer>
   </React.StrictMode>,
   document.getElementById("root")

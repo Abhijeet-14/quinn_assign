@@ -22,26 +22,12 @@ function MyComponents() {
   }, []);
 
   console.log(state);
-//   state?.data?.posts?.map((value, key) => console.log(key, value.text));
   return (
     <div>
-      MyComponentssss
-      <ul>
-        {state?.data?.posts?.map((value, key) => (
-          <li key={key}>
-            <Card1 data={value} /> 
-            {value?.id} <br />
-            {value?.iscalenderentry} <br />
-            {value?.privacy} <br />
-            {value?.rating} <br />
-            {value?.typeofday?.map((val) => val)} <br />
-            {value?.media[0]?.mediatype} <br />
-            {value?.media[0]?.updatedontimestamp} <br />
-            {value?.updatedontimestamp} <br />
-            {value?.userid} <br />
-          </li>
-        ))}
-      </ul>
+      <h1>Quinn Calender</h1>
+      {state?.data?.posts?.map((value, key) => (
+        <Card1 data={value} index = {key} />
+      ))}
     </div>
   );
 }
