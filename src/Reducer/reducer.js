@@ -1,17 +1,18 @@
 export const initialState = {
+    responseMeta: {},
     data: [],
-    cart: [],
-    buy: [],
 }
 
 const reducer =  (state, action) => {
     console.log(action);
 
     if(action.type === "FETCH_DATA"){
+        const {requesteruserid, requesterusername} = action.payload.data;
         return {
-            ...state,
-            data: action.payload.data,
-        }
+          ...state,
+          data: action.payload.data?.responseobjects[0],
+          responseMeta: { requesteruserid, requesterusername},
+        };
     }
 
     if(action.type === "ADD_TO_CART"){
